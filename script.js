@@ -79,18 +79,21 @@ compArr.forEach(async function (item) {
     alt="token"
   />${item.symbol}</div>
       <div class="col">${item.volume}</div>
-      <div class="col">${Number(item.dcaPrice).toFixed(4)}</div>
-      <div class="col">${Number(item.curPrice).toFixed(4)}</div>
-      <div class="col">${Number(item.profit).toFixed(2)}</div>
-      <div class="col">${item.proportion.toFixed(2)}%</div>`;
+      <div class="col">${parseFloat(Number(item.dcaPrice).toFixed(4))}</div>
+      <div class="col">${parseFloat(Number(item.curPrice).toFixed(4))}</div>
+      <div class="col">${parseFloat(Number(item.profit).toFixed(2))}</div>
+      <div class="col">${parseFloat(item.proportion.toFixed(2))}%</div>`;
     portTable.appendChild(div);
   });
   const totalProfit = tokenArr.reduce((arr, cur) => arr + cur.profit, 0);
   console.log(totalProfit);
   document.querySelector(
-    "#total-profit"
-  ).innerHTML = `Current balance: $${Number(totalVol + totalProfit).toFixed(
-    2
+    "#total-balance"
+  ).innerHTML = `Current balance: $${parseFloat(
+    Number(totalVol + totalProfit).toFixed(2)
+  )}`;
+  document.querySelector("#total-pnl").innerHTML = `Total PnL: $${parseFloat(
+    Number(totalProfit).toFixed(2)
   )}`;
   // Add color for profit
   const itemArr = Array.from(document.querySelectorAll(".item :nth-child(5)"));
