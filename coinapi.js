@@ -159,7 +159,7 @@ dataFetch().then((priceArr) => {
         <div class="col">${item.volume.toFixed(1)}</div>
         <div class="col-2">${parseFloat(Number(item.dcaPrice).toFixed(4))}</div>
         <div class="col">${parseFloat(Number(item.curPrice()).toFixed(4))}</div>
-        <div class="col-2">${parseFloat(Number(item.amount).toFixed(2))}</div>
+        <div class="col-2">${parseFloat(Number(item.amount).toFixed(3))}</div>
         <div class="col">${parseFloat(Number(item.profit).toFixed(2))}</div>
         <div class="col">${parseFloat(item.proportion.toFixed(2))}%</div>
         
