@@ -305,5 +305,3 @@ const deleteOrder = function (orderCount, orderId, orderSymbol) {
   saveToStorage("historyArr", historyArr);
 };
 
-const e = new Date();
-console.log(e.getDate(), e.getMonth(), e.getFullYear());
